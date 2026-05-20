@@ -3,7 +3,29 @@
 # Main Backend File
 # ================================
 
-print("Starting Hand Gesture Control System...")
+def main():
+    print("================================")
+    print(" Hand Gesture Control System ")
+    print(" Starting Application... ")
+    print("================================")
 
-# Launch UI
-import ui
+    try:
+        # Import UI module
+        import ui
+
+        print("UI module loaded successfully!")
+
+        # If ui has a start function, call it
+        if hasattr(ui, "start_ui"):
+            ui.start_ui()
+        else:
+            print("UI imported. Running default execution...")
+
+    except Exception as e:
+        print("Error while starting application:")
+        print(e)
+
+
+# Run program
+if __name__ == "__main__":
+    main()
