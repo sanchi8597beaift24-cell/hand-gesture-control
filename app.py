@@ -1,52 +1,73 @@
-from flask import Flask, render_template_string
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# =========================
+# HOME PAGE
+# =========================
 @app.route('/')
 def home():
-    return render_template_string("""
+    return render_template("index.html")
+
+
+# =========================
+# START CAMERA PAGE
+# =========================
+@app.route('/start')
+def start():
+    return """
+    <!DOCTYPE html>
+
     <html>
+
     <head>
-        <title>Hand Gesture Control</title>
+
+        <title>Hand Gesture Camera</title>
+
+        <!-- External CSS -->
+        <link rel="stylesheet" href="/static/style.css">
+
+        <!-- External JavaScript -->
+        <script src="/static/script.js" defer></script>
+
         <style>
-            body {
-                font-family: Arial;
-                text-align: center;
+
+            body{
+                margin:0;
+                padding:0;
+                text-align:center;
+                font-family:Arial;
                 background: linear-gradient(to right, #141e30, #243b55);
-                color: white;
-                padding-top: 100px;
+                color:white;
             }
-            h1 {
-                font-size: 40px;
-                color: #00ffcc;
+
+            h1{
+                margin-top:30px;
+                color:#00ffcc;
             }
-            p {
-                font-size: 18px;
+
+            #camera-container{
+                margin-top:30px;
             }
-            .box {
-                background: rgba(255,255,255,0.1);
-                padding: 20px;
-                margin: auto;
-                width: 60%;
-                border-radius: 15px;
-                box-shadow: 0 0 10px #00ffcc;
-            }
+
         </style>
+
     </head>
 
     <body>
-        <h1>🤖 Hand Gesture Control System</h1>
-        <div class="box">
-            <p>Welcome to your AI-based project 🚀</p>
-            <p>Modules:</p>
-            <p>✔ Hand Tracking</p>
-            <p>✔ Virtual Mouse</p>
-            <p>✔ Air Canvas</p>
-            <p><b>Project is successfully deployed on Render</b></p>
-        </div>
-    </body>
-    </html>
-    """)
 
+        <h1>🖐 Hand Gesture Camera Started</h1>
+
+        <div id="camera-container"></div>
+
+    </body>
+
+    </html>
+    """
+
+
+# =========================
+# MAIN
+# =========================
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

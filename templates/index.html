@@ -1,55 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Hand Gesture Control</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: linear-gradient(120deg, #1e3c72, #2a5298);
-            color: white;
-            text-align: center;
-            margin-top: 100px;
-        }
 
-        .box {
-            background: rgba(0,0,0,0.4);
-            padding: 30px;
-            margin: auto;
-            width: 50%;
-            border-radius: 15px;
-            box-shadow: 0 0 20px black;
-        }
-
-        button {
-            padding: 12px 25px;
-            font-size: 18px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .start {
-            background: #00c853;
-            color: white;
-        }
-
-        .start:hover {
-            background: #00e676;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<div class="box">
-    <h1>🖐 Hand Gesture Control System</h1>
-    <p>AI-based gesture recognition project</p>
+    <div class="container">
 
-    <a href="/start">
-        <button class="start">Start Project</button>
-    </a>
-</div>
+        <h1>🤖 Hand Gesture Control System</h1>
+
+        <div class="box">
+
+            <p class="welcome">
+                Welcome to your AI-based project 🚀
+            </p>
+
+            <h2>Modules</h2>
+
+            <ul>
+                <li>✔ Hand Tracking</li>
+                <li>✔ Virtual Mouse</li>
+                <li>✔ Air Canvas</li>
+            </ul>
+
+            <a href="/start">
+                <button>Start Project</button>
+            </a>
+
+        </div>
+
+    </div>
 
 </body>
+
 </html>
